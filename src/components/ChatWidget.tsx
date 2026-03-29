@@ -9,6 +9,7 @@ interface Message {
 }
 
 const welcomeMessage = `Hi! I'm here to answer questions about ${portfolioData.profile.fullName} and his backend work. What would you like to know?`;
+const isGitHubPages = typeof window !== "undefined" && window.location.hostname === "lanreken.github.io";
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,19 @@ const ChatWidget: React.FC = () => {
     const userMessage = inputValue.trim();
     setInputValue("");
     setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+
+    if (isGitHubPages) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content:
+            `The live GitHub Pages version is static, so the AI chat backend is disabled here.\n\nYou can still reach ${portfolioData.profile.shortName} directly at **${portfolioData.profile.email}** or through LinkedIn and GitHub below.`,
+        },
+      ]);
+      return;
+    }
+
     setIsLoading(true);
 
     try {
