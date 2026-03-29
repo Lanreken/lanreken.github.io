@@ -1,0 +1,20 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#0A101A"/>
+  <rect x="50" y="54" width="1100" height="612" rx="30" fill="#111827" stroke="#243244"/>
+  <text x="82" y="168" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="58" font-weight="700">Blog Platform</text>
+  <text x="82" y="220" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="24">Content workflows, authors, moderation</text>
+  <rect x="82" y="292" width="312" height="260" rx="24" fill="#0F172A" stroke="#7C3AED"/>
+  <text x="112" y="344" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="22">Author Panel</text>
+  <text x="112" y="404" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="36" font-weight="700">Draft / Publish</text>
+  <text x="112" y="452" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Structured CRUD and content states</text>
+  <rect x="432" y="292" width="312" height="260" rx="24" fill="#0F172A" stroke="#8B5CF6"/>
+  <text x="462" y="344" fill="#DDD6FE" font-family="Arial, sans-serif" font-size="22">Reader Layer</text>
+  <text x="462" y="404" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="36" font-weight="700">Posts / Comments</text>
+  <text x="462" y="452" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Engagement-ready backend workflows</text>
+  <rect x="782" y="188" width="280" height="364" rx="24" fill="#0F172A" stroke="#A78BFA"/>
+  <text x="814" y="242" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">Moderation</text>
+  <text x="814" y="300" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="20">- Roles</text>
+  <text x="814" y="346" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="20">- Access rules</text>
+  <text x="814" y="392" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="20">- Content review</text>
+  <text x="814" y="438" fill="#C4B5FD" font-family="Arial, sans-serif" font-size="20">- Publishing lifecycle</text>
+</svg>

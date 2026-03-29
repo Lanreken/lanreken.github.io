@@ -1,0 +1,24 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#0A1020"/>
+  <rect x="48" y="54" width="1104" height="612" rx="28" fill="#101826" stroke="#1F2937"/>
+  <text x="78" y="168" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="58" font-weight="700">Vendsr Backend</text>
+  <text x="78" y="218" fill="#93C5FD" font-family="Arial, sans-serif" font-size="24">Seller verification, product APIs, secure flows</text>
+  <rect x="78" y="284" width="320" height="170" rx="24" fill="#111827" stroke="#2563EB"/>
+  <text x="108" y="332" fill="#60A5FA" font-family="Arial, sans-serif" font-size="20">Verification Pipeline</text>
+  <text x="108" y="392" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="42" font-weight="700">Dojah + JWT</text>
+  <text x="108" y="432" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Onboarding and trusted seller checks</text>
+  <rect x="438" y="284" width="320" height="170" rx="24" fill="#111827" stroke="#0EA5E9"/>
+  <text x="468" y="332" fill="#67E8F9" font-family="Arial, sans-serif" font-size="20">Delivery Rhythm</text>
+  <text x="468" y="392" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="42" font-weight="700">Sprint Driven</text>
+  <text x="468" y="432" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Team lead workflow with GitHub and Trello</text>
+  <rect x="798" y="164" width="276" height="380" rx="28" fill="#111827" stroke="#1D4ED8"/>
+  <text x="830" y="220" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">API Modules</text>
+  <rect x="830" y="256" width="212" height="52" rx="14" fill="#172554"/>
+  <text x="858" y="289" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="20">Auth</text>
+  <rect x="830" y="328" width="212" height="52" rx="14" fill="#172554"/>
+  <text x="858" y="361" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="20">Products</text>
+  <rect x="830" y="400" width="212" height="52" rx="14" fill="#172554"/>
+  <text x="858" y="433" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="20">Seller Checks</text>
+  <rect x="830" y="472" width="212" height="52" rx="14" fill="#172554"/>
+  <text x="858" y="505" fill="#DBEAFE" font-family="Arial, sans-serif" font-size="20">Admin Review</text>
+</svg>
