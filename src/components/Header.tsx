@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
-import { useTheme } from '../contexts/ThemeContext';
+import React, { useState, useEffect } from "react";
+import "./Header.css";
+import { useTheme } from "../contexts/ThemeContext";
+import { portfolioData } from "../data/portfolio";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,14 +13,14 @@ const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileMenuOpen(false);
   };
@@ -29,26 +30,23 @@ const Header: React.FC = () => {
   };
 
   const navItems = [
-    { id: 'about', label: 'About', number: '01' },
-    { id: 'projects', label: 'Projects', number: '02' },
-    { id: 'contact', label: 'Contact', number: '03' },
-    { id: 'tech', label: 'Tech', number: '04' }
+    { id: "about", label: "About", number: "01" },
+    { id: "projects", label: "Projects", number: "02" },
+    { id: "contact", label: "Contact", number: "03" },
+    { id: "tech", label: "Tech", number: "04" },
   ];
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <nav className="nav">
         <div className="nav-brand">
-          <a href="#hero" className="brand-link">SR</a>
+          <a href="#hero" className="brand-link">{portfolioData.profile.monogram}</a>
         </div>
-        
-        <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+
+        <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>
           {navItems.map((item) => (
             <li key={item.id}>
-              <button 
-                onClick={() => scrollToSection(item.id)} 
-                className="nav-link"
-              >
+              <button onClick={() => scrollToSection(item.id)} className="nav-link">
                 <span className="nav-number">{item.number}.</span>
                 {item.label}
               </button>
@@ -57,13 +55,13 @@ const Header: React.FC = () => {
         </ul>
 
         <div className="header-actions">
-          <button 
+          <button
             className="theme-toggle"
             onClick={toggleTheme}
-            aria-label={`Switch to ${theme === 'dark' ? 'darker' : 'dark'} theme`}
-            title={`Switch to ${theme === 'dark' ? 'darker' : 'dark'} theme`}
+            aria-label={`Switch to ${theme === "dark" ? "darker" : "dark"} theme`}
+            title={`Switch to ${theme === "dark" ? "darker" : "dark"} theme`}
           >
-            {theme === 'dark' ? (
+            {theme === "dark" ? (
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
@@ -82,12 +80,8 @@ const Header: React.FC = () => {
             )}
           </button>
 
-          <button 
-            className="mobile-menu-toggle"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}>
+          <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+            <span className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}>
               <span></span>
               <span></span>
               <span></span>

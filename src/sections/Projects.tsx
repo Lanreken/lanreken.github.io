@@ -1,56 +1,43 @@
-import React, { useState } from 'react';
-import './Projects.css';
+import React, { useState } from "react";
+import "./Projects.css";
+import { portfolioData } from "../data/portfolio";
+import ScrollStack, { ScrollStackItem } from "../components/ScrollStack";
+
+interface ProjectCard {
+  id: number;
+  title: string;
+  description: string;
+  detail: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string;
+  image?: string;
+  images?: string[];
+  browserUrl: string;
+  note?: string;
+}
 
 const Projects: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({});
-  const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Edemenu',
-      description: 'A B2B and B2C digital menu management platform with AI-powered menu generation from PDFs using GPT-5. Built with microservices architecture featuring analytics, multi-authentication, and payment integrations, all containerized with Docker and deployed on AWS.',
-      technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'AWS', 'OpenAI GPT-5', 'Prisma'],
-      githubUrl: 'https://github.com/EdemenuOrg',
-      liveUrl: 'https://edemenu.com/',
-      image: '/Edemenu_preview.png'
-    },
-    {
-      id: 2,
-      title: 'TrojAuth',
-      description: 'A secure login application with React frontend and Spring Boot backend, featuring JWT authentication, OAuth 2.0 (Google & GitHub), and multi-factor authentication with email OTP and TOTP support. Built with microservices architecture and deployed using Docker and Kubernetes.',
-      technologies: ['React', 'Spring Boot', 'Java', 'MySQL', 'JWT', 'OAuth 2.0', 'Docker', 'Kubernetes'],
-      githubUrl: 'https://github.com/Shreyas2877/LogIn/tree/stable-v1.1',
-      liveUrl: 'https://medium.com/@shreyas.raviprakash/building-a-secure-scalable-login-application-with-microservices-oauth-mfa-react-spring-mysql-daa2983ddc3e',
-      images: ['/TrojApp.jpg', '/TrojApp_1.jpg', '/TrojApp2.jpg']
-    },
-    {
-      id: 3,
-      title: 'Troj-MCP',
-      description: 'A comprehensive Model Context Protocol (MCP) server providing powerful tools for system integration, file operations, calendar management, and email handling. Built with Python and FastAPI, featuring 95%+ test coverage, comprehensive logging, and secure command execution with input validation. Includes Docker support for easy deployment and supports calendar integration, email management, and system monitoring capabilities.',
-      technologies: ['Python', 'FastAPI', 'MCP', 'Docker', 'Pydantic', 'Ruff', 'MyPy'],
-      githubUrl: 'https://github.com/Shreyas2877/Troj-MCP',
-      liveUrl: '',
-      image: '/TrojMCP.png'
-    }
-  ];
+  const projects: ProjectCard[] = portfolioData.projects;
 
-  const handleImageChange = (projectId: number, direction: 'prev' | 'next') => {
-    const project = projects.find(p => p.id === projectId);
+  const handleImageChange = (projectId: number, direction: "prev" | "next") => {
+    const project = projects.find((item) => item.id === projectId);
     if (!project || !project.images) return;
 
     const currentIndex = currentImageIndex[projectId] || 0;
     const totalImages = project.images.length;
-    
-    if (direction === 'next') {
+
+    if (direction === "next") {
       setCurrentImageIndex({
         ...currentImageIndex,
-        [projectId]: (currentIndex + 1) % totalImages
+        [projectId]: (currentIndex + 1) % totalImages,
       });
     } else {
       setCurrentImageIndex({
         ...currentImageIndex,
-        [projectId]: currentIndex === 0 ? totalImages - 1 : currentIndex - 1
+        [projectId]: currentIndex === 0 ? totalImages - 1 : currentIndex - 1,
       });
     }
   };
@@ -63,24 +50,21 @@ const Projects: React.FC = () => {
           <h3 className="section-title">Some Things I've Built</h3>
         </div>
       </div>
-      
+
       <div className="projects-list">
-        {projects.map((project) => {
-          const currentIndex = project.images ? (currentImageIndex[project.id] || 0) : 0;
+        <ScrollStack className="projects-stack" itemDistance={88} itemScale={0.015} stackPosition="14%" baseScale={0.96} rotationAmount={0.35} blurAmount={0}>
+        {projects.map((project, index) => {
+          const currentIndex = project.images ? currentImageIndex[project.id] || 0 : 0;
           const displayImage = project.image || (project.images ? project.images[currentIndex] : null);
-          
+
           return (
-            <div key={project.id} className="project-item">
+            <ScrollStackItem key={project.id} itemClassName="project-stack-card">
+            <div className={`project-item ${index % 2 === 1 ? "project-item-reverse" : ""}`}>
               <div className="project-content">
                 <div className="project-label">Featured Project</div>
                 <h4 className="project-title">
                   {project.liveUrl ? (
-                    <a 
-                      href={project.liveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-title-link"
-                    >
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-title-link">
                       {project.title}
                     </a>
                   ) : (
@@ -89,6 +73,8 @@ const Projects: React.FC = () => {
                 </h4>
                 <div className="project-description-wrapper">
                   <p className="project-description">{project.description}</p>
+                  <p className="project-description">{project.detail}</p>
+                  {project.note && <p className="project-description">{project.note}</p>}
                 </div>
                 <ul className="project-tech-list">
                   {project.technologies.map((tech, techIndex) => (
@@ -96,25 +82,13 @@ const Projects: React.FC = () => {
                   ))}
                 </ul>
                 <div className="project-links">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub Link"
-                    className="project-link"
-                  >
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Link" className="project-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                     </svg>
                   </a>
                   {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="External Link"
-                      className="project-link"
-                    >
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="External Link" className="project-link">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                         <polyline points="15 3 21 3 21 9"></polyline>
@@ -125,7 +99,7 @@ const Projects: React.FC = () => {
                 </div>
               </div>
               <div className="project-image-wrapper">
-                <div className={`project-image ${displayImage ? 'has-image' : ''}`}>
+                <div className={`project-image ${displayImage ? "has-image" : ""}`}>
                   {displayImage ? (
                     <div className="monitor-frame">
                       <div className="monitor-screen">
@@ -136,74 +110,27 @@ const Projects: React.FC = () => {
                               <span className="browser-dot dot-yellow"></span>
                               <span className="browser-dot dot-green"></span>
                             </div>
-                            <div className="browser-url">
-                              {project.title === 'TrojAuth' 
-                                ? 'login.dev' 
-                                : project.title === 'Troj-MCP' 
-                                ? 'troj-mcp.local' 
-                                : 'edemenu.com'}
-                            </div>
+                            <div className="browser-url">{project.browserUrl}</div>
                           </div>
                           <div className="browser-content">
                             {project.images && project.images.length > 1 ? (
                               <>
                                 <div className="image-carousel">
-                                  <img 
-                                    src={displayImage} 
-                                    alt={`${project.title} - Screenshot ${currentIndex + 1}`} 
-                                    className="project-screenshot"
-                                    onError={() => {
-                                      setImageErrors({
-                                        ...imageErrors,
-                                        [displayImage]: true
-                                      });
-                                    }}
-                                    onLoad={() => {
-                                      setImageErrors({
-                                        ...imageErrors,
-                                        [displayImage]: false
-                                      });
-                                    }}
-                                  />
-                                  <button 
-                                    className="carousel-btn carousel-prev"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleImageChange(project.id, 'prev');
-                                    }}
-                                    aria-label="Previous image"
-                                  >
+                                  <img src={displayImage} alt={`${project.title} - Screenshot ${currentIndex + 1}`} className="project-screenshot" />
+                                  <button className="carousel-btn carousel-prev" onClick={(e) => { e.stopPropagation(); handleImageChange(project.id, "prev"); }} aria-label="Previous image">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                      <path d="M10 12l-4-4 4-4"/>
+                                      <path d="M10 12l-4-4 4-4" />
                                     </svg>
                                   </button>
-                                  <button 
-                                    className="carousel-btn carousel-next"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      handleImageChange(project.id, 'next');
-                                    }}
-                                    aria-label="Next image"
-                                  >
+                                  <button className="carousel-btn carousel-next" onClick={(e) => { e.stopPropagation(); handleImageChange(project.id, "next"); }} aria-label="Next image">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                      <path d="M6 12l4-4-4-4"/>
+                                      <path d="M6 12l4-4-4-4" />
                                     </svg>
                                   </button>
                                 </div>
                                 <div className="carousel-indicators">
                                   {project.images.map((_, idx) => (
-                                    <button
-                                      key={idx}
-                                      className={`carousel-indicator ${idx === currentIndex ? 'active' : ''}`}
-                                      onClick={(e) => {
-                                        e.stopPropagation();
-                                        setCurrentImageIndex({
-                                          ...currentImageIndex,
-                                          [project.id]: idx
-                                        });
-                                      }}
-                                      aria-label={`Go to image ${idx + 1}`}
-                                    />
+                                    <button key={idx} className={`carousel-indicator ${idx === currentIndex ? "active" : ""}`} onClick={(e) => { e.stopPropagation(); setCurrentImageIndex({ ...currentImageIndex, [project.id]: idx }); }} aria-label={`Go to image ${idx + 1}`} />
                                   ))}
                                 </div>
                               </>
@@ -217,14 +144,16 @@ const Projects: React.FC = () => {
                     </div>
                   ) : (
                     <div className="project-image-placeholder">
-                      <span>💻</span>
+                      <span>[ ]</span>
                     </div>
                   )}
                 </div>
               </div>
             </div>
+            </ScrollStackItem>
           );
         })}
+        </ScrollStack>
       </div>
     </section>
   );

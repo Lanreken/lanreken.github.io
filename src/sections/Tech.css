@@ -54,6 +54,7 @@
   max-width: 900px;
   margin: 0 auto;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 .tech-item {
@@ -124,6 +125,37 @@
   color: var(--text-primary);
 }
 
+.tech-bento-block {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.tech-bento-copy {
+  max-width: 760px;
+}
+
+.tech-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+.tech-bento-title {
+  margin: 0 0 0.75rem;
+  color: var(--text-primary);
+  font-size: clamp(1.35rem, 1.1rem + 0.8vw, 2rem);
+}
+
+.tech-bento-text {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 62ch;
+}
+
 @media (max-width: 768px) {
   .tech {
     padding: 3.5rem 0;
@@ -145,6 +177,7 @@
   .tech-list {
     gap: 0.875rem 1rem;
     justify-content: center;
+    margin-bottom: 2.5rem;
   }
 
   .tech-item {
@@ -159,6 +192,10 @@
 
   .tech-name {
     font-size: 0.875rem;
+  }
+
+  .tech-bento-block {
+    gap: 1.25rem;
   }
 }
 

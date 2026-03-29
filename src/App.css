@@ -8,6 +8,15 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+.App main,
+.App footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* Smooth scrolling */

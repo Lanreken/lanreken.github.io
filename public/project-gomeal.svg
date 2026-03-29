@@ -1,0 +1,12 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#09131B"/>
+  <rect x="54" y="56" width="1092" height="608" rx="28" fill="#101826" stroke="#1F2937"/>
+  <text x="82" y="170" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="58" font-weight="700">Go Meal</text>
+  <text x="82" y="220" fill="#86EFAC" font-family="Arial, sans-serif" font-size="24">Collaborative product build with service workflows</text>
+  <rect x="82" y="284" width="1020" height="252" rx="28" fill="#0F172A" stroke="#16A34A"/>
+  <text x="120" y="344" fill="#BBF7D0" font-family="Arial, sans-serif" font-size="22">Team Project Snapshot</text>
+  <text x="120" y="408" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="42" font-weight="700">Ordering logic, coordination, delivery flow</text>
+  <text x="120" y="460" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Designed to represent teamwork, product thinking, and practical implementation.</text>
+  <rect x="82" y="566" width="220" height="44" rx="22" fill="#14532D"/>
+  <text x="132" y="595" fill="#DCFCE7" font-family="Arial, sans-serif" font-size="18">Collaborative Build</text>
+</svg>

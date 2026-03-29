@@ -1,17 +1,13 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
+import { portfolioData } from "../data/portfolio";
 
 const Footer: React.FC = () => {
-  const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/Shreyas2877' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/shreyas-raviprakash-87b600142/' }
-  ];
-
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-links">
-          {socialLinks.map((social, index) => (
+          {portfolioData.socials.map((social, index) => (
             <a
               key={index}
               href={social.url}
@@ -25,7 +21,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
         <div className="footer-text">
-          <p>Designed & Built by Shreyas Raviprakash</p>
+          <p>Designed & Built by {portfolioData.profile.fullName}</p>
         </div>
       </div>
     </footer>

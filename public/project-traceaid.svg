@@ -1,0 +1,28 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#08111F"/>
+  <rect x="54" y="56" width="1092" height="608" rx="28" fill="#0F172A" stroke="#1E293B"/>
+  <circle cx="104" cy="104" r="10" fill="#FB7185"/>
+  <circle cx="138" cy="104" r="10" fill="#FBBF24"/>
+  <circle cx="172" cy="104" r="10" fill="#34D399"/>
+  <rect x="238" y="88" width="338" height="32" rx="16" fill="#13233C"/>
+  <text x="76" y="188" fill="#7DD3FC" font-family="Arial, sans-serif" font-size="30" font-weight="700">TraceAid</text>
+  <text x="76" y="232" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="56" font-weight="700">Transparent Fundraising</text>
+  <text x="76" y="286" fill="#94A3B8" font-family="Arial, sans-serif" font-size="26">Milestones. Wallet logic. Evidence review. Donor trust.</text>
+  <rect x="76" y="340" width="260" height="156" rx="20" fill="#0B1B2E" stroke="#1D4ED8"/>
+  <text x="102" y="390" fill="#60A5FA" font-family="Arial, sans-serif" font-size="20">Campaign Progress</text>
+  <rect x="102" y="420" width="208" height="16" rx="8" fill="#13233C"/>
+  <rect x="102" y="420" width="156" height="16" rx="8" fill="#22C55E"/>
+  <text x="102" y="470" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="36" font-weight="700">3 / 5</text>
+  <text x="102" y="505" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Milestones completed</text>
+  <rect x="374" y="340" width="300" height="156" rx="20" fill="#0B1B2E" stroke="#1E40AF"/>
+  <text x="400" y="390" fill="#60A5FA" font-family="Arial, sans-serif" font-size="20">Admin Review Queue</text>
+  <text x="400" y="445" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="32" font-weight="700">12 pending checks</text>
+  <text x="400" y="485" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Evidence uploads, payouts, compliance</text>
+  <rect x="712" y="168" width="360" height="390" rx="28" fill="#0B1B2E" stroke="#1E40AF"/>
+  <text x="748" y="218" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="30" font-weight="700">Donor Wallet</text>
+  <text x="748" y="270" fill="#60A5FA" font-family="Arial, sans-serif" font-size="18">Available balance</text>
+  <text x="748" y="320" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="52" font-weight="700">N 2.4M</text>
+  <rect x="748" y="362" width="288" height="82" rx="18" fill="#13233C"/>
+  <text x="776" y="405" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="20">Proof of impact uploaded</text>
+  <text x="776" y="433" fill="#7DD3FC" font-family="Arial, sans-serif" font-size="18">Awaiting admin approval</text>
+ </svg>

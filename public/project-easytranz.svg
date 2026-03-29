@@ -1,0 +1,16 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#0B1220"/>
+  <rect x="58" y="58" width="1084" height="604" rx="28" fill="#10192D" stroke="#1E293B"/>
+  <text x="84" y="176" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="58" font-weight="700">Easy-Tranz</text>
+  <text x="84" y="226" fill="#A5F3FC" font-family="Arial, sans-serif" font-size="24">Transaction-focused backend architecture</text>
+  <rect x="84" y="286" width="450" height="300" rx="30" fill="#0F172A" stroke="#0891B2"/>
+  <text x="122" y="340" fill="#67E8F9" font-family="Arial, sans-serif" font-size="20">Flow</text>
+  <text x="122" y="398" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="34" font-weight="700">Request -> Verify -> Process</text>
+  <text x="122" y="450" fill="#94A3B8" font-family="Arial, sans-serif" font-size="20">Clean transaction routing for modern services</text>
+  <rect x="592" y="236" width="454" height="350" rx="30" fill="#0F172A" stroke="#0EA5E9"/>
+  <text x="632" y="290" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="28" font-weight="700">Key Backend Qualities</text>
+  <text x="632" y="352" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">- REST-first endpoints</text>
+  <text x="632" y="402" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">- Clear API structure</text>
+  <text x="632" y="452" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">- Authentication-ready design</text>
+  <text x="632" y="502" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">- Practical product workflow focus</text>
+</svg>

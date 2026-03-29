@@ -1,0 +1,16 @@
+.splash-cursor-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 24;
+  opacity: 0.88;
+  mix-blend-mode: screen;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .splash-cursor-canvas {
+    display: none;
+  }
+}
