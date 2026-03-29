@@ -29,24 +29,29 @@ npm run build
 
 ## GitHub Pages Hosting
 
-This repo is configured for GitHub Pages deployment from:
+To use the short GitHub Pages URL:
 
-`https://github.com/Lanreken/Olanrewaju-Portfolio`
+`https://lanreken.github.io/`
 
-The Vite production base path is already set to:
+the repository must be named exactly:
 
-`/Olanrewaju-Portfolio/`
+`lanreken.github.io`
+
+The Vite production base path is set to:
+
+`/`
 
 ### Deployment flow
 
-1. Push your latest code to the `main` branch
-2. Open the repository on GitHub
-3. Go to `Settings > Pages`
-4. Under `Build and deployment`, choose `GitHub Actions`
-5. GitHub will run `.github/workflows/deploy.yml`
-6. After the workflow succeeds, the site will be live at:
+1. Create a repository named `lanreken.github.io` under your GitHub account
+2. Push this portfolio code to that repository's `main` branch
+3. Open the repository on GitHub
+4. Go to `Settings > Pages`
+5. Under `Build and deployment`, choose `GitHub Actions`
+6. GitHub will run `.github/workflows/deploy.yml`
+7. After the workflow succeeds, the site will be live at:
 
-`https://lanreken.github.io/Olanrewaju-Portfolio/`
+`https://lanreken.github.io/`
 
 ## Important Note About Chat
 
